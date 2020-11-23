@@ -6,9 +6,9 @@ class TasksContainer extends React.Component {
  
     renderTasks = () => {
         if (this.props.filter === 'All') {
-            return this.props.tasks.map(task => <Task key={task.id} task={task} />)
+            return this.props.tasks.map(task => <Task key={task.text} task={task} handleDelete={this.props.handleDelete} />)
         } else {
-            return this.props.tasks.filter(task => task.category === this.props.filter).map(task => <Task key={task.id} task={task} />)
+            return this.props.tasks.filter(task => task.category === this.props.filter).map(task => <Task key={task.text} task={task} handleDelete={this.props.handleDelete}/>)
         }
     }
 
